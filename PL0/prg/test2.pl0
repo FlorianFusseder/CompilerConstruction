@@ -1,0 +1,28 @@
+
+/* Beispielprogramm zur PL/0-Scanner-Erweiterung  */
+/* Enthaelt Dezimalkonstanten und Kommentare      */
+/* ---------------------------------------------  */
+
+const c=666.555; 
+var   n,f;
+
+/* Dezimalkonstanten mit Syntaxfehlern */
+const d=777. ;
+
+/* iterative Berechnung der Fakultaet */
+procedure fakultaet;
+  var i;
+  begin
+    f := 111.111;
+    i := 22.33;
+    while  i<=n do begin
+                     f := f* /* Kommentare sind ausserhalb von Tokens ueberall erlaubt */ i;
+                     i := i+ /* Kommentare sind ausserhalb von Tokens ueberall erlaubt */ 1
+                   end
+  end;
+
+/* Hauptprogramm */
+  begin
+    n := c;
+    call /* Kommentare sind ausserhalb von Tokens ueberall erlaubt */ fakultaet;
+  end.
