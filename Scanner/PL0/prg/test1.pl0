@@ -1,0 +1,63 @@
+/**************************************************************************/
+/* PL/0 - test program:                                                   */
+/* Procedure multiply computes the product of two numbers                 */
+/* Procedure divide   computes the quotient of two numbers                */
+/* Procedure gcd      computes the greatest common divisor of two numbers */
+/*                                                                        */
+/* This program is modified from GCD.PL0 to test the Scanner extensions   */
+/* for lexical analysis of comments and REAL constants                    */
+/*                                                                        */
+/**************************************************************************/
+
+const m=8.312, n=85.123; m=12.34E+4; q=12.34E-4;
+var   x,y,z,q,r;
+
+procedure multiply;
+   var a,b;
+   begin
+     a:=x; b:=y; z:=0.0;
+     while b>0.0 do
+       begin
+         if odd b then z:=z+a;
+         a:=2*a;
+         b:=b/2
+       end
+   end;
+
+procedure divide;
+  var w;
+  begin
+    r:=x; q:=0; w:=y;
+    while w<=r do w:=2*w;
+    while w> y do
+      begin
+        q:=2*q;
+        w:=w/2;
+        if w<=r then
+          begin
+            r:=r-w;
+            q:=q+1;
+          end
+      end
+    end;
+
+
+procedure gcd;
+  var f,g;
+  begin
+    f:=x;
+    g:=y;
+    while f#g do
+      begin
+        if f<g then g:=g-f;
+        if g<f then f:=f-g;
+      end;
+    z:=f
+  end;
+
+  begin
+    x:=m;  y:=n; call multiply;
+    x:=25.25; y:=3.3; call divide;
+    x:=84.432; y:=36.123; call gcd
+  end.
+
