@@ -54,5 +54,3 @@ class State:
             return
         else:
             self.isNotFloat()
-
-
