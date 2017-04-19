@@ -21,56 +21,35 @@ namespace exercise_2c
         {
             q0 = new State(0, StateTyp.start);
             q1 = new State(1, StateTyp.final);
-            q2 = new State(2, StateTyp.final);
+            q2 = new State(2);
             q3 = new State(3, StateTyp.final);
             q4 = new State(4);
             q5 = new State(5);
-            q6 = new State(6);
-            q7 = new State(7, StateTyp.final);
+            q6 = new State(6, StateTyp.final);
 
-            q0.addTransition(new List<ITransition>
-            {
-                new Transition(q1, new List<string> { "1", "2", "3", "4", "5", "6", "7", "8", "9" }),
-                new Transition(q2, "0" ),
-                new Transition(q3, "." ),
-            });
+            q0.addTransition(new Transition(q1, new List<string> { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" }));
 
             q1.addTransition(new List<ITransition>
             {
                 new Transition(q1, new List<string> { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" }),
-                new Transition(q3, "." ),
+                new Transition(q2, "." ),
+                new Transition(q4, "E" ),
             });
 
-            q2.addTransition(new List<ITransition>
-            {
-                new Transition(q3, "." ),
-            });
+            q2.addTransition(new Transition(q3, new List<string> {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}));
 
             q3.addTransition(new List<ITransition>
             {
-                new Transition(q4, new List<string> { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" }),
+                new Transition(q3, new List<string> { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" }),
+                new Transition(q4, new List<string> {"E"}),
             });
 
-            q4.addTransition(new List<ITransition>
-            {
-                new Transition(q4, new List<string> { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" }),
-                new Transition(q5, "E" ),
-            });
+            q4.addTransition(new Transition(q5, new List<string> { "+", "-" }));
 
-            q5.addTransition(new List<ITransition>
-            {
-                new Transition(q6, new List<string> {"+", "-" }),
-            });
+            q5.addTransition(new Transition(q6, new List<string> { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" }));
 
-            q6.addTransition(new List<ITransition>
-            {
-                new Transition(q7, new List<string> { "1", "2", "3", "4", "5", "6", "7", "8", "9" }),
-            });
+            q6.addTransition(new Transition(q6, new List<string> { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" }));
 
-            q7.addTransition(new List<ITransition>
-            {
-                new Transition(q7, new List<string> { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" }),
-            });
         }
 
         public IAtom checkAtom(string s, int lineNumber, int rowNumber)

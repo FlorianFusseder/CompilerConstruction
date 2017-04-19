@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercise_2c", "exercise_2c\exercise_2c.csproj", "{A36A0D54-0BB0-48A7-A052-6FFEE6F3595B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{40E1E183-C03B-453B-B73B-0026DA86AE8B}"
+	ProjectSection(SolutionItems) = preProject
+		exercise_2c\bin\Debug\code.txt = exercise_2c\bin\Debug\code.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
